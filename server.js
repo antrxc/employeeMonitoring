@@ -55,3 +55,5 @@ mongoose.connect(process.env.MONGO_URI)
 const leaveRoutes = require('./routes/leaves');
 app.use('/leaves', leaveRoutes);
 
+const authRoutes = require('./routes/auth');
+app.use('/auth', authRoutes);

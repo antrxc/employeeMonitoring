@@ -43,6 +43,17 @@ router.post('/', async (req, res) => {
         verificationType: json.VerificationType,
         gps: json.GPS
       });
+      const Profile = require("../models/Profile");
+
+      const profileExists = await Profile.findOne({ employeeCode: json.EmployeeCode });
+
+      if (!profileExists) {
+        await Profile.create({
+          employeeCode: json.EmployeeCode,
+          role: "Employee" // default
+        });
+      }
+
   
       await log.save();
   

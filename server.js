@@ -57,3 +57,6 @@ app.use('/leaves', leaveRoutes);
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
+
+const profileRoutes = require("./routes/profile");
+app.use("/profile", profileRoutes);

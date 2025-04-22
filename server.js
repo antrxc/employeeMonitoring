@@ -51,3 +51,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => {
     console.error('❌ MongoDB connection error:', err);
   });
+
+const leaveRoutes = require('./routes/leaves');
+app.use('/leaves', leaveRoutes);
+
